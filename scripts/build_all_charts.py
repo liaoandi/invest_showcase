@@ -711,7 +711,7 @@ def main():
     parser.add_argument("--out", default=None, help="Output HTML path")
     args = parser.parse_args()
 
-    out_path = Path(args.out) if args.out else OUTPUT_DIR / "index.html"
+    out_path = Path(args.out) if args.out else Path(__file__).resolve().parent.parent / "index.html"
 
     # Determine tickers
     if args.tickers:
