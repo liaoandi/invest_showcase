@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import json
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -22,7 +23,7 @@ import yfinance as yf
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-SV101_OUTPUT = Path.home() / "Desktop/podcast_juicer_sv101/output"
+SV101_OUTPUT = Path(os.getenv("SV101_OUTPUT_DIR", Path.home() / "projects" / "podcast_juicer_sv101" / "output"))
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output/charts"
 
 OUTCOME_COLOR = {
